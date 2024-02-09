@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        /* CSS styling for the gallery */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the content stretches to fill the entire viewport height */
+        }
+
+        header {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px; /* Increased padding for better spacing */
+            display: flex; /* Align logo and button horizontally */
+            align-items: center; /* Center vertically */
+            justify-content: space-between; /* Put logo and button at opposite ends */
+            position: relative; /* Make header a positioned container */
+        }
+
+        header #logo,
+        footer #logo {
+            width: 50px; /* Adjust the width of the logo */
+            height: auto;
+        }
+
+        header button {
+            position: absolute; /* Position the button */
+            top: 10px; /* Distance from the top */
+            right: 20px; /* Distance from the right */
+        }
+
+        .gallery {
+            flex: 1; /* Allow the gallery to grow to fill the available space */
+            display: flex; /* Arrange images horizontally */
+            flex-wrap: wrap-reverse; /* Reverse the wrapping direction to start from the right */
+            justify-content: flex-start; /* Align images from right to left */
+            gap: 10px;
+            padding: 20px;
+            overflow-x: auto; /* Add horizontal scroll if images overflow */
+        }
+
+        .gallery-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            flex: 0 0 calc(33.33% - 10px); /* Ensure each image occupies one-third of the container width with gap */
+            margin-bottom: 20px; /* Add margin bottom to create space between rows */
+        }
+
+        .gallery-item img {
+            width: 100%; /* Make images fill the entire width of their container */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Ensure images maintain their aspect ratio while covering the entire space */
+            display: block;
+        }
+
+        footer {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: auto; /* Push the footer to the bottom of the page */
+            display: flex; /* Align logo and button horizontally */
+            align-items: center; /* Center vertically */
+            justify-content: space-between; /* Put logo and button at opposite ends */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="img/logo1.jpg" alt="CBHSN logo">
+        <button onclick="goBack()">Go Back</button> <!-- Button to go back to the previous page -->
+    </header>
+
+    <div class="gallery">
+        <!-- Add your images as gallery items here -->
+        <div class="gallery-item">
+            <img src="img/dancer.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="img/scouts.jpg" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="img/image1.jpg" alt="Image 3">
+        </div>
+       <div class="gallery-item">
+            <img src="img/kageto.jpg" alt="Image 4">
+        </div> <div class="gallery-item">
+            <img src="img/logo1.jpg" alt="Image 5">
+        </div> <div class="gallery-item">
+            <img src="img/image1" alt="Image ">
+        </div>
+        <!-- Add more images as needed -->
+    </div>
+
+    <footer>
+        <img id="logo" src="img/logo1.jpg" alt="CBHSN logo">
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back(); // Go back to the previous page
+        }
+    </script>
+</body>
+
+</html>
+
